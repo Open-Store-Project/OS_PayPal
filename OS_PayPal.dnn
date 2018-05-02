@@ -22,7 +22,7 @@
       <components>
 				<component type="ResourceFile">
 					<resourceFiles>
-						<basePath>DesktopModules\NBright\OSPayPal</basePath>
+						<basePath>DesktopModules\NBright\OS_PayPal</basePath>
 						<resourceFile>
 							<name>Resource.zip</name>
 						</resourceFile>
@@ -32,8 +32,8 @@
 					<assemblies>
 						<assembly>
 							<path>bin</path>
-							<name>OSPayPal.dll</name>
-							<sourceFileName>OSPayPal.dll</sourceFileName>
+							<name>OS_PayPal.dll</name>
+							<sourceFileName>OS_PayPal.dll</sourceFileName>
 						</assembly>
 					</assemblies>
 				</component>
