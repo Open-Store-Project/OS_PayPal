@@ -83,9 +83,8 @@ namespace OS_PayPal
                     if (orderData.OrderStatus == "020") // check we have a waiting for bank status (Cancel from bank seems to happen even after notified has accepted it as valid??)
                     {
                         var rtnerr = orderData.PurchaseInfo.GetXmlProperty("genxml/paymenterror");
-                        rtnerr = "."; // to return this so a fail is activated.
                         orderData.PaymentFail();
-                        return rtnerr;
+                        return ""; // empty trigger fail message.
                     }
                 }
             }
