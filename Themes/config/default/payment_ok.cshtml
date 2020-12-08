@@ -3,12 +3,16 @@
 @using DotNetNuke.Entities.Users
 @using NBrightDNN
 @using Nevoweb.DNN.NBrightBuy.Components
+@using System.Web
 
 @AddMetaData("resourcepath", "/DesktopModules/NBright/OS_PayPal/App_LocalResources")
 @AddMetaData("resourcepath", "/DesktopModules/NBright/NBrightBuy/App_LocalResources/")
 
 @{
     var info = (NBrightInfo)Model.List.First();
+    var eid = HttpContext.Current.Request.QueryString["orderid"];
+    var orderData = new OrderData(0, Convert.ToInt32(eid));
+    var orderNumber = orderData.OrderNumber;
 }
 
 @if (Model.GetSettingBool("carttitle"))
@@ -37,13 +41,13 @@
     </div>
 
     <div class="formrow">
-        <b>@ResourceKey("OrderAdmin.ordernumber"):</b> @info.GetXmlProperty("genxml/ordernumber")
+        <b>@ResourceKey("OrderAdmin.ordernumber"):</b> @orderNumber
     </div>
 
     @if (UserController.Instance.GetCurrentUserInfo().UserID > 0)
     {
         <div class="formrow">
-            <a class="primarybutton" href="/tabid/@(Model.GetSetting("ordermanagertab"))/eid/@(info.ItemID)">@ResourceKey("CartView.ViewOrder")</a>
+            <a class="primarybutton" href="/tabid/@(Model.GetSetting("ordermanagertab"))/eid/@(eid)">@ResourceKey("CartView.ViewOrder")</a>
         </div>
     }
     else
