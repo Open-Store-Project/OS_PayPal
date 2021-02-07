@@ -50,7 +50,7 @@ namespace OS_PayPal
             NotifyUrl = Utils.ToAbsoluteUrl("/DesktopModules/NBright/OS_PayPal/notify.ashx");
             MerchantLanguage = Utils.GetCurrentCulture();
             Amount = (appliedtotal - alreadypaid).ToString("0.00", CultureInfo.InvariantCulture);
-            Email = oInfo.PurchaseInfo.GetXmlProperty("genxml/billaddress/genxml/textbox/billaddress");
+            Email = oInfo.PurchaseInfo.GetXmlProperty("genxml/billaddress/genxml/textbox/email");
             if (!Utils.IsEmail(Email)) Email = oInfo.PurchaseInfo.GetXmlProperty("genxml/extrainfo/genxml/textbox/cartemailaddress");
             // set shipping and tax to zero, these should be calculated by the store so the amount should always be correct.
             // for some reason paypal seem to add shipping and tax to the total.  
