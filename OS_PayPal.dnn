@@ -1,6 +1,6 @@
 ﻿<dotnetnuke type="Package" version="5.0">
 	<packages>
-		<package name="OSPayPal" type="Module" version="1.1.1">
+		<package name="OSPayPal" type="Module" version="1.2.0">
 			<friendlyName>OSPayPal</friendlyName>
 			<description>OSPayPal: Payment provider for open-Store</description>
 			<iconFile />
